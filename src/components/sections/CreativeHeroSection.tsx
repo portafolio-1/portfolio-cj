@@ -349,21 +349,36 @@ export function CreativeHeroSection({ onOpenContactModal }: CreativeHeroSectionP
 
         {/* Rotating Creative Phrases */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="mb-8 h-16 flex items-center justify-center"
+          className="mb-8 h-16 flex items-center justify-center overflow-hidden"
         >
           <motion.p
             key={currentText}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="text-xl sm:text-2xl text-slate-300 max-w-3xl text-shimmer"
-            style={{ 
-              backgroundImage: "linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent)",
-              backgroundSize: "200% 100%"
+            initial={{ 
+              opacity: 0,
+              x: 50,
+              rotateX: 90,
+              filter: "blur(10px)"
             }}
+            animate={{ 
+              opacity: 1,
+              x: 0,
+              rotateX: 0,
+              filter: "blur(0px)"
+            }}
+            exit={{ 
+              opacity: 0,
+              x: -50,
+              rotateX: -90,
+              filter: "blur(10px)"
+            }}
+            transition={{
+              duration: 0.5,
+              ease: [0.4, 0, 0.2, 1]
+            }}
+            className="text-xl sm:text-2xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-cyan-400 bg-300% animate-gradient"
           >
             {creativeTexts[currentText]}
           </motion.p>

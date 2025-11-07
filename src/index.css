@@ -18,6 +18,28 @@
   --color-bg-primary: #0F172A;
   --color-bg-secondary: #1E293B;
   --color-bg-card: #334155;
+}
+
+@layer utilities {
+  .bg-300% {
+    background-size: 300% auto;
+  }
+
+  .animate-gradient {
+    animation: gradient 6s linear infinite;
+  }
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
   
   --color-text-primary: #F1F5F9;
   --color-text-secondary: #CBD5E1;
