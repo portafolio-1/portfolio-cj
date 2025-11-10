@@ -8,6 +8,8 @@ import { ContactSection } from './components/sections/ContactSection';
 import { Navbar } from './components/sections/Navbar';
 import { ScrollProgress } from './components/ui/ScrollProgress';
 import { ContactModal } from './components/ui/ContactModal';
+import { WhatsAppButton } from './components/ui/WhatsAppButton';
+import { MusicPlayer } from './components/ui/MusicPlayer';
 import { useState } from 'react';
 
 function AppContent() {
@@ -21,6 +23,12 @@ function AppContent() {
       
       {/* Scroll Progress */}
       <ScrollProgress />
+      
+      {/* Music Player */}
+      <MusicPlayer />
+      
+      {/* WhatsApp Button */}
+      <WhatsAppButton />
       
       {/* Main content */}
       <main className="relative">
@@ -38,7 +46,7 @@ function AppContent() {
         onClose={() => setIsContactModalOpen(false)} 
       />
       
-            {/* Footer */}
+      {/* Footer */}
       <footer className="relative py-12 px-4 sm:px-6 lg:px-8 bg-slate-900 border-t border-slate-700">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
@@ -131,7 +139,6 @@ function AppContent() {
           </div>
         </div>
       </footer>
-
     </div>
   );
 }
@@ -145,4 +152,3 @@ function App() {
 }
 
 export default App;
-

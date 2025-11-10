@@ -52,33 +52,25 @@ export function CreativeHeroSection({ onOpenContactModal }: CreativeHeroSectionP
       {/* Animated Background */}
       <div className="absolute inset-0 animated-gradient opacity-10"></div>
       
-      {/* Magic cursor trail */}
-      <motion.div
-        className="absolute w-4 h-4 rounded-full bg-cyan-400/50 pointer-events-none mix-blend-screen z-50"
-        animate={{
-          x: mousePos.x - 8,
-          y: mousePos.y - 8,
-        }}
-        transition={{
-          type: "spring",
-          stiffness: 500,
-          damping: 28
-        }}
-      />
-      
-      <motion.div
-        className="absolute w-8 h-8 rounded-full border-2 border-cyan-400/30 pointer-events-none z-40"
-        animate={{
-          x: mousePos.x - 16,
-          y: mousePos.y - 16,
-        }}
-        transition={{
-          type: "spring",
-          stiffness: 200,
-          damping: 20
-        }}
-      />
-      
+    {/* Magic cursor trail - Subtle and minimal */}
+{/* Small center dot */}
+<motion.div
+  className="fixed w-1.5 h-1.5 bg-cyan-400/70 rounded-full pointer-events-none z-50"
+  style={{
+    left: mousePos.x - 3,
+    top: mousePos.y - 3,
+  }}
+/>
+
+{/* Subtle outer ring - appears on movement */}
+<motion.div
+  className="fixed w-8 h-8 border border-cyan-400/20 rounded-full pointer-events-none z-40"
+  style={{
+    left: mousePos.x - 16,
+    top: mousePos.y - 16,
+  }}
+/>
+     
       {/* Enhanced floating geometric shapes */}
       <motion.div className="absolute inset-0 pointer-events-none">
         {[...Array(12)].map((_, i) => (
@@ -116,28 +108,32 @@ export function CreativeHeroSection({ onOpenContactModal }: CreativeHeroSectionP
 
       {/* Code snippets floating effect */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
-        {[
-          {text: 'const', x: 120, y: 150},
-          {text: 'Spring', x: 320, y: 200},
-          {text: 'AWS', x: 520, y: 180},
-          {text: '<React>', x: 720, y: 160},
-          {text: 'Node.js', x: 920, y: 190},
-          {text: '=>', x: 1120, y: 170},
-          {text: 'Lambda', x: 220, y: 400},
-          {text: 'MySQL', x: 420, y: 420},
-          {text: 'Docker', x: 620, y: 380},
-          {text: 'API', x: 820, y: 410},
-        ].map((item, i) => (
-          <motion.div
-            key={item.text}
-            className={`absolute text-sm font-mono font-bold ${
-              i % 3 === 0 ? 'text-cyan-400/40' :
-              i % 3 === 1 ? 'text-purple-400/40' : 'text-green-400/40'
-            }`}
-            style={{
-              left: `${item.x}px`,
-              top: `${item.y}px`,
-            }}
+  {[
+    {text: 'const', x: 10, y: 15},
+    {text: 'Spring', x: 25, y: 25},
+    {text: 'AWS', x: 45, y: 20},
+    {text: '<React>', x: 65, y: 18},
+    {text: 'Node.js', x: 80, y: 22},
+    {text: '=>', x: 90, y: 30},
+    {text: 'Lambda', x: 15, y: 50},
+    {text: 'MySQL', x: 35, y: 55},
+    {text: 'Docker', x: 55, y: 48},
+    {text: 'API', x: 70, y: 52},
+    {text: 'TypeScript', x: 20, y: 75},
+    {text: '{...}', x: 85, y: 70},
+    {text: 'Java', x: 40, y: 80},
+    {text: 'Git', x: 75, y: 85},
+  ].map((item, i) => (
+    <motion.div
+      key={item.text}
+      className={`absolute text-sm font-mono font-bold ${
+        i % 3 === 0 ? 'text-cyan-400/40' :
+        i % 3 === 1 ? 'text-purple-400/40' : 'text-green-400/40'
+      }`}
+      style={{
+        left: `${item.x}%`,
+        top: `${item.y}%`,
+      }}
             animate={{
               y: [0, -200, -400],
               opacity: [0, 0.6, 0],
@@ -260,7 +256,7 @@ export function CreativeHeroSection({ onOpenContactModal }: CreativeHeroSectionP
                 backgroundSize: "200% 200%"
               }}
             >
-              Ciro Vásquez
+              CJ Vásquez
             </motion.span>
           </h1>
         </motion.div>
@@ -355,18 +351,19 @@ export function CreativeHeroSection({ onOpenContactModal }: CreativeHeroSectionP
             </span>
           </motion.button>
           
-          <motion.a
-            href="/CV-Ciro-Vasquez.pdf"
-            download="CV-Ciro-Vasquez.pdf"
-            className="group px-8 py-4 glass-card text-slate-300 font-semibold rounded-xl hover:text-white transition-all duration-300"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <span className="flex items-center space-x-2">
-              <Download className="w-5 h-5 group-hover:animate-bounce" />
-              <span>Descargar CV</span>
-            </span>
-          </motion.a>
+<motion.a
+  href="/cv/CJ-Vasquez.pdf"
+  download="CV-CJ-Vasquez.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  whileHover={{ scale: 1.05 }}
+  whileTap={{ scale: 0.95 }}
+  className="inline-flex items-center px-6 py-3 rounded-xl glass-card text-slate-300 hover:text-slate-100 transition-all hover:scale-105 group border border-slate-700 hover:border-slate-600"
+>
+  <Download className="w-5 h-5 mr-2" />
+  Descargar CV
+</motion.a>
+
         </motion.div>
 
         {/* Social Links - Botones verticales lado derecho */}

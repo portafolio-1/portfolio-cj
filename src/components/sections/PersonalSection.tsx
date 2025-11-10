@@ -175,8 +175,7 @@ export function PersonalSection() {
             Más allá del código
           </motion.h2>
           <p className="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
-            Porque los mejores desarrolladores también son <strong>humanos interesantes</strong> <p></p> 
-            con historias que contar y pasiones que los impulsan.
+            Porque los mejores desarrolladores también son <strong>humanos interesantes</strong> con historias que contar y pasiones que los impulsan.         
           </p>
         </motion.div>
 

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Code2, Database, User, Calendar, Trophy, Award } from 'lucide-react';
+import { Code2, Database, User, Calendar, Trophy } from 'lucide-react';
 import { useIntersectionObserver } from '../../hooks/useAdvancedEffects';
 
 // Estadísticas reales basadas en tu CV

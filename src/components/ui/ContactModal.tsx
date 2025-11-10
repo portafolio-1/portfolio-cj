@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Mail, Phone, MapPin, Send, Linkedin, Github, Coffee } from 'lucide-react';
+import { X, Mail, Phone, MapPin, Send, Linkedin, Github, Calendar } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 interface ContactModalProps {
@@ -11,22 +11,22 @@ const contactInfo = [
   {
     icon: Mail,
     label: 'Email',
-    value: 'hola@tudominio.com',
-    link: 'mailto:hola@tudominio.com',
+    value: 'ciro.vm92@gmail.com',
+    link: 'mailto:ciro.vm92@gmail.com',
     description: 'Respondo en menos de 24h'
   },
   {
     icon: Phone,
     label: 'Teléfono',
-    value: '+34 123 456 789',
-    link: 'tel:+34123456789',
+    value: '+51 933 055 687',
+    link: 'tel:+51933055687',
     description: 'Mejor por WhatsApp'
   },
   {
     icon: MapPin,
     label: 'Ubicación',
-    value: 'Madrid, España',
-    link: 'https://maps.google.com/?q=Madrid,Spain',
+    value: 'Lima, Perú',
+    link: 'https://maps.google.com/?q=Lima,Peru',
     description: 'Trabajo remoto disponible'
   }
 ];
@@ -35,23 +35,23 @@ const socialLinks = [
   {
     icon: Linkedin,
     label: 'LinkedIn',
-    url: 'https://linkedin.com/in/username',
+    url: 'https://linkedin.com/in/cj-vasquez',
     color: 'hover:text-blue-500',
-    description: 'Conectemos profesionalmente'
+    description: 'Conectemos'
   },
   {
     icon: Github,
     label: 'GitHub',
-    url: 'https://github.com/username',
+    url: 'https://github.com/CJ-Vasquez',
     color: 'hover:text-purple-500',
     description: 'Revisa mi código'
   },
   {
-    icon: Coffee,
-    label: 'Calendario',
-    url: 'https://calendly.com/username',
-    color: 'hover:text-amber-500',
-    description: 'Agenda una charla'
+    icon: Calendar,
+    label: 'WhatsApp',
+    url: 'https://wa.me/51933055687',
+    color: 'hover:text-green-500',
+    description: 'Chatea conmigo'
   }
 ];
 
@@ -288,7 +288,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
                   className="p-6 rounded-xl bg-gradient-to-r from-cyan-500/10 to-purple-600/10 border border-cyan-500/20"
                 >
                   <div className="flex items-center mb-3">
-                    <Coffee className="w-5 h-5 text-amber-400 mr-2" />
+                    <span className="text-xl mr-2">☕</span>
                     <h4 className="font-semibold text-slate-100">Fun Fact</h4>
                   </div>
                   <p className="text-slate-300 text-sm">
@@ -369,10 +369,10 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
                         className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-xl text-slate-100 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-colors duration-200"
                       >
                         <option value="">Selecciona rango</option>
-                        <option value="< 5k">Menos de €5,000</option>
-                        <option value="5k-15k">€5,000 - €15,000</option>
-                        <option value="15k-30k">€15,000 - €30,000</option>
-                        <option value="30k+">Más de €30,000</option>
+                        <option value="< 1k">Menos de S/ 1,000</option>
+                        <option value="1k-5k">S/ 1,000 - S/ 5,000</option>
+                        <option value="5k-10k">S/ 5,000 - S/ 10,000</option>
+                        <option value="10k+">Más de S/ 10,000</option>
                         <option value="discuss">A discutir</option>
                       </select>
                     </div>
